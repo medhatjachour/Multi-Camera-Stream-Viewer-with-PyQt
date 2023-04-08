@@ -219,8 +219,8 @@ class MainWindow(QMainWindow):
         combo = self.sender()
         if combo.id_number >= 0 :
             if idx > 0 :
-                print(self.threads.keys())
-                print(combo.id_number)
+                # print(self.threads.keys())
+                # print(combo.id_number)
                 if combo.id_number in self.threads.keys():
                     self.threads[combo.id_number].stop() 
                     # self.theLabel.remove(combo.id_number)
@@ -243,7 +243,7 @@ class MainWindow(QMainWindow):
                 self.threads[combo.id_number].stop()
                 # Wait for 5 seconds
                 time.sleep(1)
-                print("removing pixmmap")
+                # print("removing pixmmap")
                 self.cameraViewlabels[combo.id_number].setStyleSheet(u"background-color: black;")
                 self.cameraViewlabels[combo.id_number].clear()
                 self.cameraViewlabels[combo.id_number].setPixmap(QPixmap())
