@@ -17,23 +17,18 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.show()        
+        # controllers
         self.cameraViewlabels = {}
         self.availableCameras =[]
         self.combBoxes = {}
         self.theLabel = []
         self.threads = {}
-        # # Thread in charge of updating the image
-        # self.th = Thread(self)
-        # self.th.finished.connect(self.close)
-        # self.th.updateFrame.connect(self.setImage)
 
-        # self.setWindowFlag(Qt.FramelessWindowHint)
-        # window functions 
-        self.ui.verticalLayout_11.removeWidget(self.ui.popUpNotificationContainer)
         self.setWindowFlag(Qt.FramelessWindowHint)
         # window functions 
         self.ui.closeBtn.clicked.connect(self.closeFun)
-
+        # make the notification window floated
+        self.ui.verticalLayout_11.removeWidget(self.ui.popUpNotificationContainer)
         self.ui.notificationBtn.clicked.connect(self.notificationFun)
         self.ui.closeNotificationBtn.clicked.connect(self.closeNotificationFun)
         # left
@@ -47,7 +42,6 @@ class MainWindow(QMainWindow):
         self.ui.centerMenuContainer.setMinimumWidth(0)
         self.ui.centerMenuContainer.setMaximumWidth(0)
         # self.expandLeftMenuFun(False)
-
         self.ui.expandCamSettings.clicked.connect(partial( self.expandRightMenuFun, True))
         self.ui.closeRightMenuBtn.clicked.connect(partial( self.expandRightMenuFun, False))
         self.ui.cameraSettingsButton.clicked.connect(self.cameraSettingsButtonFun)
@@ -70,8 +64,8 @@ class MainWindow(QMainWindow):
         #Window state
         self.ui.minimizeBtn.clicked.connect(self.showMinimized)
         self.ui.restoreBtn.clicked.connect(self.toggleFullScreen)
+        
         self.theComb = None
-
         self.setImages = {
             0:self.setImage_0,
             1:self.setImage_1,
@@ -219,8 +213,8 @@ class MainWindow(QMainWindow):
         combo = self.sender()
         if combo.id_number >= 0 :
             if idx > 0 :
-                print(self.threads.keys())
-                print(combo.id_number)
+                # print(self.threads.keys())
+                # print(combo.id_number)
                 if combo.id_number in self.threads.keys():
                     self.threads[combo.id_number].stop() 
                     # self.theLabel.remove(combo.id_number)
@@ -243,7 +237,7 @@ class MainWindow(QMainWindow):
                 self.threads[combo.id_number].stop()
                 # Wait for 5 seconds
                 time.sleep(1)
-                print("removing pixmmap")
+                # print("removing pixmmap")
                 self.cameraViewlabels[combo.id_number].setStyleSheet(u"background-color: black;")
                 self.cameraViewlabels[combo.id_number].clear()
                 self.cameraViewlabels[combo.id_number].setPixmap(QPixmap())
