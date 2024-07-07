@@ -15,7 +15,7 @@ Customizable Settings:
 Easily configure camera properties (e.g., resolution, frame rate).
 Adjust brightness, contrast, and other visual settings
 
-![alt text](https://github.com/medhatjachour/Multi-Camera-Stream-Viewer-with-PyQt/blob/icons/img.png?raw=true)
+![alt text](https://github.com/medhatjachour/Multi-Camera-Stream-Viewer-with-PyQt/blob/main/Icons/img.png?raw=true)
 
 ## Installation
 
