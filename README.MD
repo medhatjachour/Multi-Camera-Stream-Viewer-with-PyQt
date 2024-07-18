@@ -5,15 +5,15 @@ This project provides a user-friendly interface for viewing multiple camera stre
 
 ## Features
 1. Camera Streams:
-  . Add camera streams by specifying their URLs or device IDs.
-  . View live video feeds from connected cameras.
-  . Support for both local and remote camera sources.
+   - Add camera streams by specifying their URLs or device IDs.
+   - View live video feeds from connected cameras.
+   - Support for both local and remote camera sources.
 2. Dynamic Layout:
-  . Change the number of camera streams displayed (e.g., 2x2 grid, 3x3 grid).
-  . Drag and drop camera feeds to rearrange their positions.
-  . Customizable Settings:
-  . Easily configure camera properties (e.g., resolution, frame rate).
-  . Adjust brightness, contrast, and other visual settings
+   - Change the number of camera streams displayed (e.g., 2x2 grid, 3x3 grid).
+   - Drag and drop camera feeds to rearrange their positions.
+   - Customizable Settings:
+   - Easily configure camera properties (e.g., resolution, frame rate).
+   - Adjust brightness, contrast, and other visual settings
 
 ![alt text](https://github.com/medhatjachour/Multi-Camera-Stream-Viewer-with-PyQt/blob/main/Icons/img.png?raw=true)
 
